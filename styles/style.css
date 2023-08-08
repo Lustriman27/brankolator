@@ -56,9 +56,6 @@
   font-size: 25px;
 }
 
-
-
-
 .calculator {
   display: flex;
   flex-direction: column;
@@ -138,4 +135,3 @@ button {
 button:hover {
   background-color: #efeeee;
 }
-

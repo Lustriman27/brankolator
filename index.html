@@ -4,40 +4,75 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Orbitron:wght@400;800&family=Oswald:wght@200;500&family=Pacifico&family=Roboto:wght@100;400&family=Shrikhand&display=swap" rel="stylesheet">
 
     <title>Brancolator</title>
   </head>
   <body>
-    <main>
-      <div class="calculator">
+    <header>
+      <div class="logo">
+        <img src="./img/Logo.png" alt="logo" class="img-croco"/>
+      </div>
+    </header>
 
-        <div class="display">1234</div>
+    <main class="container">
+      <aside class="con-publi">
+        <img src="./img/branco.png" alt="a man holding a crocodile"/>
+        <div class="publi">
+          <p class="croco">Unleash your inner adventurer with Branco, the Crocodile Enthusiast! Dive into a world of adrenaline-packed excitement as Branco takes you on a wild journey inspired by his reptilian passion.<br> From heart-pounding escapades to croc-inspired thrills, join us for an adventure that will have you roaring for more!"</p>
+        </div>
+      </aside>
 
-        <div class="numbers">
-          <div class="main-buttons">
-            <button type="button" class="func-button" value="ac">AC</button>
-            <button type="button" class="func-button" value="sign">+/-</button>
+      <section class="calculator">
+        <section class="display">
+          <p>56 x 256</p>
+          <h2>14,336</h2>
+        </section>
+        <section class="icons">
+          <img src="./img/arrow-rotate-right-solid.svg"/>
+          <img src="./img/calculator-solid.svg"/>
+          <img src="./img/gear-solid.svg"/>
+          <img src="./img/xmark-solid.svg"/>
+        </section>
+        <section class="buttons">
+          <div class="cal-btn">
+            <button type="button" class="func-button" value="c">C</button>
+            <button type="button" class="func-button" value="half">1/2</button>
             <button type="button" class="func-button" value="mod">%</button>
-            <button type="button" class="operator-button" value="divide">/</button>
-            <button type="button" class="number-button" value="1">1</button>
-            <button type="button" class="number-button" value="2">2</button>
-            <button type="button" class="number-button" value="3">3</button>
-            <button type="button" class="operator-button" value="multiply">*</button>
+            <button type="button" class="operator-button" value="divide" >÷</button>
+            <button type="button" class="number-button" value="7">7</button>
+            <button type="button" class="number-button" value="8">8</button>
+            <button type="button" class="number-button" value="9">9</button>
+            <button type="button" class="operator-button" value="multi">x</button>
             <button type="button" class="number-button" value="4">4</button>
             <button type="button" class="number-button" value="5">5</button>
             <button type="button" class="number-button" value="6">6</button>
             <button type="button" class="operator-button" value="subtract">-</button>
-            <button type="button" class="number-button" value="7">7</button>
-            <button type="button" class="number-button" value="8">8</button>
-            <button type="button" class="number-button" value="9">9</button>
+            <button type="button" class="number-button" value="1">1</button>
+            <button type="button" class="number-button" value="2">2</button>
+            <button type="button" class="number-button" value="3">3</button>
             <button type="button" class="operator-button" value="add">+</button>
-            <button id="zero" type="button" class="number-button" value="0">0</button>
+            <button type="button" class="number-button-0" value="0">0</button>
             <button type="button" class="dot-button" value="decimal">.</button>
-            <button type="button" class="operator-button" value="e">=</button>
+            <button type="button" class="operator-button-equal" value="equal">=</button>
           </div>
+        </section>
+      </section>
+
+      <aside class="con-publi">
+        <img src="./img/adren.png" alt="website adrenaline adventure"/>
+        <div class="publi">
+          <p class="adre">AdrenalineVentures is a premier travel and radical experiences company that aims to provide thrill-seekers and adventure enthusiasts with the ultimate adrenaline-packed vacations and unforgettable experiences.</p>
         </div>
-      </div>
+      </aside>
+      
     </main>
   </body>
 </html>

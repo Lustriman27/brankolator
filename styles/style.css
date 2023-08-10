@@ -1,14 +1,83 @@
+/** @format */
+
 * {
   margin: 0;
 }
 
 @font-face {
-  font-family: 'Digital7';
-  src: url(./font/digital-7.ttf) format('truetype');
+  font-family: "Digital7";
+  src: url(./font/digital-7.ttf) format("truetype");
 }
 body {
-  background-color: ;
+  background-color: white;
 }
+
+/* Add Media Queries for Different Screen Sizes */
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Adjust font size for mobile */
+  }
+
+  .left-col {
+    width: 100%; /* Take full width on mobile */
+    height: 100vh; /* Adjust height for mobile */
+  }
+
+  .logo {
+    margin: 2% 0 5% 2%; /* Adjust logo margin for mobile */
+  }
+
+  h1 {
+    font-size: 30px; /* Adjust font size for mobile */
+    margin-top: 20%; /* Adjust margin-top for mobile */
+  }
+
+  .container {
+    grid-template-columns: 1fr; /* Single column layout on mobile */
+    gap: 5%; /* Reduce gap for mobile */
+    margin: 5%; /* Adjust margin for mobile */
+  }
+
+  .vertical-banner {
+    display: none;
+  }
+
+  .banner-logo {
+    display: none;
+  }
+
+  .calculator-container {
+    width: 100%; /* Take full width on mobile */
+    font-size: 20px; /* Adjust font size for mobile */
+  }
+
+  /* Add other adjustments for mobile as needed */
+}
+
+/* Tablet Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    font-size: 16px; /* Adjust font size for tablet */
+  }
+
+  .vertical-banner {
+    display: none;
+  }
+
+  .banner-logo {
+    display: none;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 1025px) {
+  body {
+    font-size: 18px; /* Adjust font size for desktop */
+  }
+}
+
 .left-col {
   width: 70%;
   background: #385170;
@@ -20,8 +89,8 @@ body {
 
 .logo {
   display: flex;
-  justify-content:flex-start;
-  align-items:flex-start;
+  justify-content: flex-start;
+  align-items: flex-start;
   max-width: 200px;
   margin: 2% 0 5% 5%;
 }
@@ -29,7 +98,7 @@ body {
   max-width: 200px;
 }
 h1 {
-  font-family: 'Digital7';
+  font-family: "Digital7";
   font-size: 45px;
   margin-top: 40%;
   margin-left: 5%;
@@ -52,7 +121,7 @@ h1 {
   align-items: flex-start;
 }
 
-.con-publi{
+.con-publi {
   position: relative;
   padding: 10%;
   box-sizing: border-box;
@@ -70,7 +139,6 @@ h1 {
 
 .con-publi:hover img {
   transform: scaleX(-1);
-
 }
 figcaption {
   position: absolute;
@@ -87,13 +155,13 @@ figcaption {
   color: #ececec;
   font-size: 20px;
   text-align: center;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   padding: 2%;
   opacity: 0;
   transition: opacity 0.5s ease;
   pointer-events: none;
 }
-.con-publi:hover figcaption{
+.con-publi:hover figcaption {
   opacity: 1;
 }
 
@@ -108,19 +176,17 @@ figcaption {
   border-radius: 5px;
 }
 
-
-
 .calculator-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color:#142d4c;
+  background-color: #142d4c;
   box-shadow: 0px 5px 10px 0px #051324;
   padding: 20px;
   border-radius: 10px;
   width: 400px;
   margin: 0 auto;
-  font-family: 'Digital7';
+  font-family: "Digital7";
   font-size: 30px;
 }
 
@@ -128,7 +194,7 @@ figcaption {
   display: block;
   text-align: right;
   margin-bottom: 20px;
-  background-color:#ececec;
+  background-color: #ececec;
   box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
   padding: 10px 95px;
 }
@@ -143,7 +209,7 @@ figcaption {
   margin: 10px 5px;
   box-sizing: content-box;
 }
-.icons img:hover{
+.icons img:hover {
   transform: translateY(5px);
   box-shadow: inset 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
 }
@@ -162,7 +228,7 @@ figcaption {
 button {
   padding: 30px;
   font-size: 20px;
-  font-family: 'Digital7';
+  font-family: "Digital7";
   font-weight: bold;
   width: 100%;
   height: 60px;
@@ -177,28 +243,33 @@ button {
 .func-button .more {
   font-size: 50px;
 }
+.func-button[value="ac"] {
+  grid-column: span 2;
+}
+
 .operator-button {
   background-color: #9fd3c7;
 }
-.operator-button-equal{
+
+.equal-button {
   background-color: #f95959;
-
 }
-.number-button-0 {
+
+.dot-button,
+.number-button {
+  background-color: #8bd7f7;
+}
+.number-button[value="0"] {
   grid-column: span 2;
-  background-color: #8bd7f7;
 }
 
-.dot-button, .number-button {
-  background-color: #8bd7f7;
-}
-
-button:hover {
+button:hover,
+button:disabled {
   background-color: #ececec;
 }
 
 .copyright {
   margin: -3% 0 0 10%;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-size: 20px;
 }

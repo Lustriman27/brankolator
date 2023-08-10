@@ -1,47 +1,180 @@
-// initialize input variable for display
-let input = "";
-const mathFunction = ["+", "-", "*", "/", "=", "C"];
+let currentInput = "";
+let firstNumber = null;
+let selectedOperator = null;
+let decimalEntered = false;
 
-// initialize display and button
+// display
 const display = document.getElementById("display-input");
-const buttons = document.querySelectorAll(
-  ".func-button, .operator-button, .number-button, .number-button-0, .dot-button, .operator-button-equal"
-);
 
-// function to handle button click
-buttons.forEach((button) => {
+function updateDisplay(content) {
+  display.textContent = content;
+}
+
+function clearDisplay() {
+  currentInput = "";
+  firstNumber = null;
+  selectedOperator = null;
+  decimalEntered = false;
+  updateDisplay("0");
+}
+
+// number button
+const numberButtons = document.querySelectorAll(".number-button");
+
+numberButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    if (!mathFunction.includes(button.textContent)) {
-      input += button.textContent;
-      updateDisplay(input);
-    } else if (button.textContent === "C") {
-      clearDisplay();
-    }
+    handleNumberButton(button.value);
   });
 });
 
-// function to update display
-const updateDisplay = (content) => {
-  display.textContent = content;
+const handleNumberButton = (value) => {
+  if (selectedOperator === null) {
+    clearDisplay();
+  }
+
+  if (currentInput === "0") {
+    currentInput = value;
+  } else {
+    currentInput += value;
+  }
+
+  updateDisplay(currentInput);
 };
 
-const clearDisplay = () => {
-  input = "";
-  display.textContent = 0;
+// operator button
+const operatorButtons = document.querySelectorAll(".operator-button");
+
+operatorButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    handleOperatorButton(button.value);
+  });
+});
+
+const handleOperatorButton = (value) => {
+  if (firstNumber === null) {
+    firstNumber = parseFloat(currentInput);
+    selectedOperator = value;
+    currentInput = "";
+    decimalEntered = false;
+  } else {
+    firstNumber = operate(
+      selectedOperator,
+      firstNumber,
+      parseFloat(currentInput)
+    );
+
+    selectedOperator = value;
+    currentInput = "";
+    decimalEntered = false;
+
+    updateDisplay(firstNumber);
+  }
 };
 
-// function to compute the math expression
-const compute = (operator, firstNum, secondNum) => {
+// decimal button
+const decimalButton = document.querySelector(".decimal-button");
+
+decimalButton.addEventListener("click", () => {
+  handleDecimalButton();
+});
+
+const handleDecimalButton = () => {
+  if (!decimalEntered) {
+    currentInput += ".";
+    decimalEntered = true;
+
+    updateDisplay(currentInput);
+  }
+};
+
+// equal button
+const equalButton = document.querySelector(".equal-button");
+
+equalButton.addEventListener("click", () => {
+  handleEqualButton();
+});
+
+const handleEqualButton = () => {
+  if (firstNumber !== null && selectedOperator !== null) {
+    firstNumber = operate(
+      selectedOperator,
+      firstNumber,
+      parseFloat(currentInput)
+    );
+
+    updateDisplay(firstNumber);
+    currentInput = firstNumber.toString();
+
+    firstNumber = null;
+    selectedOperator = null;
+    decimalEntered = false;
+  }
+};
+
+// clear button
+const clearButton = document.querySelector(".func-button[value='ac']");
+
+clearButton.addEventListener("click", () => {
+  handleClearButton();
+});
+
+const handleClearButton = () => {
+  clearDisplay();
+};
+
+// backspace button
+const backspaceButton = document.querySelector(".func-button[value='c']");
+
+backspaceButton.addEventListener("click", () => {
+  handleBackspaceButton();
+});
+
+const handleBackspaceButton = () => {
+  if (currentInput.length > 1) {
+    currentInput = currentInput.slice(0, -1);
+    updateDisplay(currentInput);
+  } else {
+    clearDisplay();
+  }
+};
+
+// keyboard support
+document.addEventListener("keydown", (event) => {
+  if (/[0-9]/.test(event.key)) {
+    handleNumberButton(event.key);
+  } else if (
+    event.key === "+" ||
+    event.key === "-" ||
+    event.key === "*" ||
+    event.key === "/"
+  ) {
+    handleOperatorButton(event.key);
+  } else if (event.key === ".") {
+    handleDecimalButton();
+  } else if (event.key === "Enter") {
+    handleEqualButton();
+  } else if (event.key === "Backspace") {
+    handleBackspaceButton();
+  }
+});
+
+// compute the math expression
+function operate(operator, a, b) {
   switch (operator) {
     case "+":
-      return firstNum + secondNum;
+      return a + b;
     case "-":
-      return firstNum - secondNum;
+      return a - b;
     case "*":
-      return firstNum * secondNum;
+      return a * b;
     case "/":
-      return secondNum === 0 ? "Infinity" : firstNum / secondNum;
+      if (b === 0) {
+        return "Infinity";
+      }
+      return a / b;
     default:
       return null;
   }
-};
+}
+
+updateDisplay("0");

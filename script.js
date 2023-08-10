@@ -6,6 +6,10 @@ let decimalEntered = false;
 // display
 const display = document.getElementById("display-input");
 
+let play = function () {
+  document.getElementById("button").play();
+};
+
 function updateDisplay(content) {
   display.textContent = content;
 }
@@ -28,6 +32,7 @@ numberButtons.forEach((button) => {
 });
 
 const handleNumberButton = (value) => {
+  play();
   if (selectedOperator === null) {
     clearDisplay();
   }

@@ -125,6 +125,7 @@ figcaption {
 }
 
 .display {
+  display: block;
   text-align: right;
   margin-bottom: 20px;
   background-color:#ececec;
@@ -166,21 +167,22 @@ button {
   width: 100%;
   height: 60px;
   text-align: center;
-  border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #ececec;
   cursor: pointer;
 }
 .func-button {
-  background-color: #f6aaed;
+  background-color: #9fd3c7;
+}
+.func-button .more {
+  font-size: 50px;
 }
 .operator-button {
-  background-color: #f6aaed;
-  font-weight: bold;
+  background-color: #9fd3c7;
 }
 .operator-button-equal{
-  background-color: #f5dc7f;
-  font-weight: bold;
+  background-color: #f95959;
+
 }
 .number-button-0 {
   grid-column: span 2;

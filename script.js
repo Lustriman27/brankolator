@@ -6,18 +6,6 @@ let decimalEntered = false;
 // display
 const display = document.getElementById("display-input");
 
-let button = function () {
-  document.getElementById("buttonPress").play();
-};
-
-let equal = function () {
-  document.getElementById("equal").play();
-};
-
-let error = function () {
-  document.getElementById("equal").play();
-};
-
 function updateDisplay(content) {
   display.textContent = content;
 }
@@ -30,6 +18,19 @@ function clearDisplay() {
   updateDisplay("0");
 }
 
+// audio
+let playButtonSound = function () {
+  document.getElementById("buttonPress").play();
+};
+
+let playEqualSound = function () {
+  document.getElementById("equal").play();
+};
+
+let playErrorSound = function () {
+  document.getElementById("error").play();
+};
+
 // number button
 const numberButtons = document.querySelectorAll(".number-button");
 
@@ -40,10 +41,7 @@ numberButtons.forEach((button) => {
 });
 
 const handleNumberButton = (value) => {
-  button();
-  if (selectedOperator === null) {
-    clearDisplay();
-  }
+  playButtonSound();
 
   if (currentInput === "0") {
     currentInput = value;
@@ -64,7 +62,8 @@ operatorButtons.forEach((button) => {
 });
 
 const handleOperatorButton = (value) => {
-  button();
+  playButtonSound();
+
   if (firstNumber === null) {
     firstNumber = parseFloat(currentInput);
     selectedOperator = value;
@@ -93,7 +92,8 @@ decimalButton.addEventListener("click", () => {
 });
 
 const handleDecimalButton = () => {
-  button();
+  playButtonSound();
+
   if (!decimalEntered) {
     currentInput += ".";
     decimalEntered = true;
@@ -110,7 +110,8 @@ equalButton.addEventListener("click", () => {
 });
 
 const handleEqualButton = () => {
-  equal();
+  playEqualSound();
+
   if (firstNumber !== null && selectedOperator !== null) {
     firstNumber = operate(
       selectedOperator,
@@ -135,6 +136,8 @@ clearButton.addEventListener("click", () => {
 });
 
 const handleClearButton = () => {
+  playButtonSound();
+
   clearDisplay();
 };
 
@@ -146,6 +149,8 @@ backspaceButton.addEventListener("click", () => {
 });
 
 const handleBackspaceButton = () => {
+  playButtonSound();
+
   if (currentInput.length > 1) {
     currentInput = currentInput.slice(0, -1);
     updateDisplay(currentInput);
@@ -185,7 +190,7 @@ function operate(operator, a, b) {
       return a * b;
     case "/":
       if (b === 0) {
-        error();
+        playErrorSound();
         return "Infinity";
       }
       return a / b;

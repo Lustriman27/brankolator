@@ -1,60 +1,228 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="/styles/style.css">
-    <script src="/script.js"></script>
+    <link
+      rel="stylesheet"
+      href="./styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="./css/normalize.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
+      crossorigin="anonymous" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Orbitron:wght@400;800&family=Oswald:wght@200;500&family=Pacifico&family=Roboto:wght@100;400&family=Shrikhand&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="./images/brankolator-favicon.png" />
+
+    <script
+      src="./script.js"
+      defer></script>
+    >>>>>>> Stashed changes
 
     <title>Brancolator</title>
   </head>
   <body>
-    <main>
-      <section class="container">
-        <section class="calculator">
-          <div class="calculatorDisplay">0</div>
-          <div class="calculatorKeys">
-            <button
-              class="keyOperator"
-              data-action="add">
-              +
-            </button>
-            <button
-              class="keyOperator"
-              data-action="subtract">
-              -
-            </button>
-            <button
-              class="keyOperator"
-              data-action="multiply">
-              &times;
-            </button>
-            <button
-              class="keyOperator"
-              data-action="divide">
-              ÷
-            </button>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>0</button>
-            <button data-action="decimal">.</button>
-            <button data-action="clear">AC</button>
-            <button
-              class="keyEqual"
-              data-action="calculate">
-              =
-            </button>
-          </div>
+    <div class="left-col"></div>
+    <div class="right-col"></div>
+    <header>
+      <nav class="logo">
+        <img
+          src="./images/brankolator.png"
+          alt="logo"
+          class="img-croco" />
+        <h1>Brancolator</h1>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="calculator">
+        <section class="calculator-container">
+          <section class="display">
+            <!-- <p>56 x 256</p> -->
+            <h2 id="display-input">0</h2>
+          </section>
+          <section class="icons">
+            <img
+              src="./icons/arrow-rotate-right-solid.svg"
+              alt="icon" />
+            <img
+              src="./icons/calculator-solid.svg"
+              alt="icon" />
+            <img
+              src="./icons/gear-solid.svg"
+              alt="icon" />
+            <img
+              src="./icons/xmark-solid.svg"
+              alt="icon" />
+          </section>
+          <section class="buttons">
+            <div class="cal-btn">
+              <button
+                type="button"
+                class="func-button"
+                value="c">
+                C
+              </button>
+              <button
+                type="button"
+                class="func-button"
+                value="half">
+                ½
+              </button>
+              <button
+                type="button"
+                class="func-button"
+                value="mod">
+                %
+              </button>
+              <button
+                type="button"
+                class="operator-button"
+                value="divide">
+                ÷
+              </button>
+              <button
+                type="button"
+                class="number-button"
+                value="7">
+                7
+              </button>
+              <button
+                type="button"
+                class="number-button"
+                value="8">
+                8
+              </button>
+              <button
+                type="button"
+                class="number-button"
+                value="9">
+                9
+              </button>
+              <button
+                type="button"
+                class="operator-button"
+                value="multi">
+                ×
+              </button>
+              <button
+                type="button"
+                class="number-button"
+                value="4">
+                4
+              </button>
+              <button
+                type="button"
+                class="number-button"
+                value="5">
+                5
+              </button>
+              <button
+                type="button"
+                class="number-button"
+                value="6">
+                6
+              </button>
+              <button
+                type="button"
+                class="operator-button"
+                value="subtract">
+                −
+              </button>
+              <button
+                type="button"
+                class="number-button"
+                value="1">
+                1
+              </button>
+              <button
+                type="button"
+                class="number-button"
+                value="2">
+                2
+              </button>
+              <button
+                type="button"
+                class="number-button"
+                value="3">
+                3
+              </button>
+              <button
+                type="button"
+                class="operator-button"
+                value="add">
+                +
+              </button>
+              <button
+                type="button"
+                class="number-button-0"
+                value="0">
+                0
+              </button>
+              <button
+                type="button"
+                class="dot-button"
+                value="decimal">
+                .
+              </button>
+              <button
+                type="button"
+                class="operator-button-equal"
+                value="equal">
+                =
+              </button>
+            </div>
+          </section>
         </section>
       </section>
+      <section class="vertical-banner">
+        <figure class="con-publi">
+          <a href="#">
+            <img
+              src="./images/portrait-banner.png"
+              alt="banner with logo" />
+          </a>
+          <figcaption>
+            <p>
+              AdrenalineVentures is a premier travel and radical experiences
+              company that aims to provide thrill-seekers and adventure
+              enthusiasts with the ultimate adrenaline-packed vacations and
+              unforgettable experiences.
+            </p>
+          </figcaption>
+        </figure>
+      </section>
+      <section class="banner-logo">
+        <img
+          src="./images/horizontal-banner.png"
+          alt="website adrenaline adventure" />
+      </section>
+      >>>>>>> Stashed changes
     </main>
   </body>
 </html>

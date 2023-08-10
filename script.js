@@ -1,28 +1,30 @@
-let currentInput = "";
+/** @format */
+
+let currentInput = '';
 let firstNumber = null;
 let selectedOperator = null;
 let decimalEntered = false;
 
 // display
-const display = document.getElementById("display-input");
+const display = document.getElementById('display-input');
 
 function updateDisplay(content) {
   display.textContent = content;
 }
 
 function clearDisplay() {
-  currentInput = "";
+  currentInput = '';
   firstNumber = null;
   selectedOperator = null;
   decimalEntered = false;
-  updateDisplay("0");
+  updateDisplay('0');
 }
 
 // number button
-const numberButtons = document.querySelectorAll(".number-button");
+const numberButtons = document.querySelectorAll('.number-button');
 
 numberButtons.forEach((button) => {
-  button.addEventListener("click", () => {
+  button.addEventListener('click', () => {
     handleNumberButton(button.value);
   });
 });
@@ -32,7 +34,7 @@ const handleNumberButton = (value) => {
     clearDisplay();
   }
 
-  if (currentInput === "0") {
+  if (currentInput === '0') {
     currentInput = value;
   } else {
     currentInput += value;
@@ -42,10 +44,10 @@ const handleNumberButton = (value) => {
 };
 
 // operator button
-const operatorButtons = document.querySelectorAll(".operator-button");
+const operatorButtons = document.querySelectorAll('.operator-button');
 
 operatorButtons.forEach((button) => {
-  button.addEventListener("click", () => {
+  button.addEventListener('click', () => {
     handleOperatorButton(button.value);
   });
 });
@@ -54,7 +56,7 @@ const handleOperatorButton = (value) => {
   if (firstNumber === null) {
     firstNumber = parseFloat(currentInput);
     selectedOperator = value;
-    currentInput = "";
+    currentInput = '';
     decimalEntered = false;
   } else {
     firstNumber = operate(
@@ -64,7 +66,7 @@ const handleOperatorButton = (value) => {
     );
 
     selectedOperator = value;
-    currentInput = "";
+    currentInput = '';
     decimalEntered = false;
 
     updateDisplay(firstNumber);
@@ -72,15 +74,15 @@ const handleOperatorButton = (value) => {
 };
 
 // decimal button
-const decimalButton = document.querySelector(".decimal-button");
+const decimalButton = document.querySelector('.decimal-button');
 
-decimalButton.addEventListener("click", () => {
+decimalButton.addEventListener('click', () => {
   handleDecimalButton();
 });
 
 const handleDecimalButton = () => {
   if (!decimalEntered) {
-    currentInput += ".";
+    currentInput += '.';
     decimalEntered = true;
 
     updateDisplay(currentInput);
@@ -88,9 +90,9 @@ const handleDecimalButton = () => {
 };
 
 // equal button
-const equalButton = document.querySelector(".equal-button");
+const equalButton = document.querySelector('.equal-button');
 
-equalButton.addEventListener("click", () => {
+equalButton.addEventListener('click', () => {
   handleEqualButton();
 });
 
@@ -114,7 +116,7 @@ const handleEqualButton = () => {
 // clear button
 const clearButton = document.querySelector(".func-button[value='ac']");
 
-clearButton.addEventListener("click", () => {
+clearButton.addEventListener('click', () => {
   handleClearButton();
 });
 
@@ -125,7 +127,7 @@ const handleClearButton = () => {
 // backspace button
 const backspaceButton = document.querySelector(".func-button[value='c']");
 
-backspaceButton.addEventListener("click", () => {
+backspaceButton.addEventListener('click', () => {
   handleBackspaceButton();
 });
 
@@ -139,21 +141,21 @@ const handleBackspaceButton = () => {
 };
 
 // keyboard support
-document.addEventListener("keydown", (event) => {
+document.addEventListener('keydown', (event) => {
   if (/[0-9]/.test(event.key)) {
     handleNumberButton(event.key);
   } else if (
-    event.key === "+" ||
-    event.key === "-" ||
-    event.key === "*" ||
-    event.key === "/"
+    event.key === '+' ||
+    event.key === '-' ||
+    event.key === '*' ||
+    event.key === '/'
   ) {
     handleOperatorButton(event.key);
-  } else if (event.key === ".") {
+  } else if (event.key === '.') {
     handleDecimalButton();
-  } else if (event.key === "Enter") {
+  } else if (event.key === 'Enter') {
     handleEqualButton();
-  } else if (event.key === "Backspace") {
+  } else if (event.key === 'Backspace') {
     handleBackspaceButton();
   }
 });
@@ -161,15 +163,15 @@ document.addEventListener("keydown", (event) => {
 // compute the math expression
 function operate(operator, a, b) {
   switch (operator) {
-    case "+":
+    case '+':
       return a + b;
-    case "-":
+    case '-':
       return a - b;
-    case "*":
+    case '*':
       return a * b;
-    case "/":
+    case '/':
       if (b === 0) {
-        return "Infinity";
+        return 'Infinity';
       }
       return a / b;
     default:
@@ -177,4 +179,25 @@ function operate(operator, a, b) {
   }
 }
 
-updateDisplay("0");
+updateDisplay('0');
+
+var activeButton = null;
+
+function changeColor(button) {
+  if (button.hasAttribute('onclick')) {
+    if (activeButton) {
+      activeButton.classList.remove('clicked-color');
+      activeButton.classList.add('initial-color');
+    }
+
+    button.classList.remove('initial-color');
+    button.classList.add('clicked-color');
+
+    activeButton = button;
+  } else if (activeButton && activeButton.hasAttribute('onclick')) {
+    activeButton.removeAttribute('onclick');
+    activeButton.classList.remove('clicked-color');
+    activeButton.classList.add('initial-color');
+    activeButton = null;
+  }
+}

@@ -5,8 +5,8 @@
 }
 
 @font-face {
-  font-family: "Digital7";
-  src: url(./font/digital-7.ttf) format("truetype");
+  font-family: 'Digital7';
+  src: url(./font/digital-7.ttf) format('truetype');
 }
 body {
   background-color: white;
@@ -17,27 +17,27 @@ body {
 /* Mobile Styles */
 @media (max-width: 768px) {
   body {
-    font-size: 14px; /* Adjust font size for mobile */
+    font-size: 14px;
   }
 
   .left-col {
-    width: 100%; /* Take full width on mobile */
-    height: 100vh; /* Adjust height for mobile */
+    width: 100%;
+    height: 100vh;
   }
 
   .logo {
-    margin: 2% 0 5% 2%; /* Adjust logo margin for mobile */
+    margin: 2% 0 5% 2%;
   }
 
   h1 {
-    font-size: 30px; /* Adjust font size for mobile */
-    margin-top: 20%; /* Adjust margin-top for mobile */
+    font-size: 30px;
+    margin-top: 20%;
   }
 
   .container {
-    grid-template-columns: 1fr; /* Single column layout on mobile */
-    gap: 5%; /* Reduce gap for mobile */
-    margin: 5%; /* Adjust margin for mobile */
+    grid-template-columns: 1fr;
+    gap: 5%;
+    margin: 5%;
   }
 
   .vertical-banner {
@@ -49,17 +49,15 @@ body {
   }
 
   .calculator-container {
-    width: 100%; /* Take full width on mobile */
-    font-size: 20px; /* Adjust font size for mobile */
+    width: 100%;
+    font-size: 20px;
   }
-
-  /* Add other adjustments for mobile as needed */
 }
 
 /* Tablet Styles */
 @media (min-width: 769px) and (max-width: 1024px) {
   body {
-    font-size: 16px; /* Adjust font size for tablet */
+    font-size: 16px;
   }
 
   .vertical-banner {
@@ -74,7 +72,7 @@ body {
 /* Desktop Styles */
 @media (min-width: 1025px) {
   body {
-    font-size: 18px; /* Adjust font size for desktop */
+    font-size: 18px;
   }
 }
 
@@ -98,7 +96,7 @@ body {
   max-width: 200px;
 }
 h1 {
-  font-family: "Digital7";
+  font-family: 'Digital7';
   font-size: 45px;
   margin-top: 40%;
   margin-left: 5%;
@@ -155,7 +153,7 @@ figcaption {
   color: #ececec;
   font-size: 20px;
   text-align: center;
-  font-family: "Roboto";
+  font-family: 'Roboto';
   padding: 2%;
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -186,7 +184,7 @@ figcaption {
   border-radius: 10px;
   width: 400px;
   margin: 0 auto;
-  font-family: "Digital7";
+  font-family: 'Digital7';
   font-size: 30px;
 }
 
@@ -228,22 +226,22 @@ figcaption {
 button {
   padding: 30px;
   font-size: 20px;
-  font-family: "Digital7";
+  font-family: 'Digital7';
   font-weight: bold;
   width: 100%;
   height: 60px;
   text-align: center;
   border-radius: 5px;
-  background-color: #ececec;
+  background-color: #388c78;
   cursor: pointer;
 }
 .func-button {
-  background-color: #9fd3c7;
+  background-color: #388c78;
 }
 .func-button .more {
   font-size: 50px;
 }
-.func-button[value="ac"] {
+.func-button[value='ac'] {
   grid-column: span 2;
 }
 
@@ -259,7 +257,7 @@ button {
 .number-button {
   background-color: #8bd7f7;
 }
-.number-button[value="0"] {
+.number-button[value='0'] {
   grid-column: span 2;
 }
 
@@ -270,6 +268,26 @@ button:disabled {
 
 .copyright {
   margin: -3% 0 0 10%;
-  font-family: "Roboto";
+  font-family: 'Roboto';
   font-size: 20px;
+}
+
+.func-button,
+.operator-button,
+.number-button,
+.decimal-button,
+.equal-button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.initial-color {
+  background-color: #9fd3c7;
+  color: white;
+}
+
+.clicked-color {
+  background-color: #ececec;
+  color: black;
 }

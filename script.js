@@ -1,35 +1,47 @@
+// initialize input variable for display
 let input = "";
+const mathFunction = ["+", "-", "*", "/", "=", "C"];
 
-const display = document.getElementById("display");
+// initialize display and button
+const display = document.getElementById("display-input");
 const buttons = document.querySelectorAll(
   ".func-button, .operator-button, .number-button, .number-button-0, .dot-button, .operator-button-equal"
 );
 
-document.addEventListener("keyup", function (event) {
-  debugger;
-  handleButtonClick(event.key);
-});
-
+// function to handle button click
 buttons.forEach((button) => {
-  button.addEventListener("click", function (event) {
-    debugger;
-    handleButtonClick(event.target.value);
+  button.addEventListener("click", () => {
+    if (!mathFunction.includes(button.textContent)) {
+      input += button.textContent;
+      updateDisplay(input);
+    } else if (button.textContent === "C") {
+      clearDisplay();
+    }
   });
 });
 
-const handleButtonClick = (value) => {
-  debugger;
-  console.log(value);
-  input += value;
+// function to update display
+const updateDisplay = (content) => {
+  display.textContent = content;
 };
 
-const clear = () => {
-  debugger;
+const clearDisplay = () => {
   input = "";
+  display.textContent = 0;
 };
 
-const compute = () => {
-  debugger;
-  const result = eval(input);
-  console.log(result);
+// function to compute the math expression
+const compute = (operator, firstNum, secondNum) => {
+  switch (operator) {
+    case "+":
+      return firstNum + secondNum;
+    case "-":
+      return firstNum - secondNum;
+    case "*":
+      return firstNum * secondNum;
+    case "/":
+      return secondNum === 0 ? "Infinity" : firstNum / secondNum;
+    default:
+      return null;
+  }
 };

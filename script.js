@@ -6,6 +6,18 @@ let decimalEntered = false;
 // display
 const display = document.getElementById("display-input");
 
+let button = function () {
+  document.getElementById("buttonPress").play();
+};
+
+let equal = function () {
+  document.getElementById("equal").play();
+};
+
+let error = function () {
+  document.getElementById("equal").play();
+};
+
 function updateDisplay(content) {
   display.textContent = content;
 }
@@ -28,6 +40,7 @@ numberButtons.forEach((button) => {
 });
 
 const handleNumberButton = (value) => {
+  button();
   if (selectedOperator === null) {
     clearDisplay();
   }
@@ -51,6 +64,7 @@ operatorButtons.forEach((button) => {
 });
 
 const handleOperatorButton = (value) => {
+  button();
   if (firstNumber === null) {
     firstNumber = parseFloat(currentInput);
     selectedOperator = value;
@@ -79,6 +93,7 @@ decimalButton.addEventListener("click", () => {
 });
 
 const handleDecimalButton = () => {
+  button();
   if (!decimalEntered) {
     currentInput += ".";
     decimalEntered = true;
@@ -95,6 +110,7 @@ equalButton.addEventListener("click", () => {
 });
 
 const handleEqualButton = () => {
+  equal();
   if (firstNumber !== null && selectedOperator !== null) {
     firstNumber = operate(
       selectedOperator,
@@ -169,6 +185,7 @@ function operate(operator, a, b) {
       return a * b;
     case "/":
       if (b === 0) {
+        error();
         return "Infinity";
       }
       return a / b;

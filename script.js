@@ -2,6 +2,7 @@ let currentInput = "";
 let firstNumber = null;
 let selectedOperator = null;
 let decimalEntered = false;
+let equalButtonPressed = false;
 
 // display
 const display = document.getElementById("display-input");
@@ -42,6 +43,11 @@ numberButtons.forEach((button) => {
 
 const handleNumberButton = (value) => {
   playButtonSound();
+
+  if (equalButtonPressed) {
+    clearDisplay();
+    equalButtonPressed = false;
+  }
 
   if (currentInput === "0") {
     currentInput = value;
@@ -94,6 +100,11 @@ decimalButton.addEventListener("click", () => {
 const handleDecimalButton = () => {
   playButtonSound();
 
+  if (equalButtonPressed) {
+    clearDisplay();
+    equalButtonPressed = false;
+  }
+
   if (!decimalEntered) {
     currentInput += ".";
     decimalEntered = true;
@@ -125,6 +136,7 @@ const handleEqualButton = () => {
     firstNumber = null;
     selectedOperator = null;
     decimalEntered = false;
+    equalButtonPressed = true;
   }
 };
 

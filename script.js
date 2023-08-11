@@ -79,7 +79,7 @@ const handleOperatorButton = (value) => {
     selectedOperator = value;
     currentInput = "";
     decimalEntered = false;
-  } else if (currentInput !== '') {
+  } else if (currentInput !== "") {
     firstNumber = operate(
       selectedOperator,
       firstNumber,
@@ -130,14 +130,12 @@ const handleEqualButton = () => {
   if (
     firstNumber !== null &&
     selectedOperator !== null &&
-    currentInput !== ''
+    currentInput !== ""
   ) {
     firstNumber = operate(
-      (firstNumber = operate(
-        selectedOperator,
-        firstNumber,
-        parseFloat(currentInput)
-      ))
+      selectedOperator,
+      firstNumber,
+      parseFloat(currentInput)
     );
 
     updateDisplay(firstNumber);
@@ -176,6 +174,26 @@ const handleBackspaceButton = () => {
     updateDisplay(currentInput);
   } else {
     clearDisplay();
+  }
+};
+
+const negativeButton = document.querySelector(".func-button[value='negative']");
+
+negativeButton.addEventListener("click", () => {
+  handleNegativeButton();
+});
+
+const handleNegativeButton = () => {
+  playButtonSound();
+
+  if (currentInput !== "0") {
+    if (currentInput.startsWith("-")) {
+      currentInput = currentInput.slice(1);
+    } else {
+      currentInput = "-" + currentInput;
+    }
+
+    updateDisplay(currentInput);
   }
 };
 

@@ -7,6 +7,12 @@
 @font-face {
   font-family: 'Digital7';
   src: url(./font/digital-7.ttf) format('truetype');
+<<<<<<< Updated upstream
+=======
+}
+body {
+  background-color: white;
+>>>>>>> Stashed changes
 }
 
 /* Add Media Queries for Different Screen Sizes */
@@ -14,27 +20,27 @@
 /* Mobile Styles */
 @media (max-width: 768px) {
   body {
-    font-size: 14px; /* Adjust font size for mobile */
+    font-size: 14px;
   }
 
   .left-col {
-    width: 100%; /* Take full width on mobile */
-    height: 100vh; /* Adjust height for mobile */
+    width: 100%;
+    height: 100vh;
   }
 
   .logo {
-    margin: 2% 0 5% 2%; /* Adjust logo margin for mobile */
+    margin: 2% 0 5% 2%;
   }
 
   h1 {
-    font-size: 30px; /* Adjust font size for mobile */
-    margin-top: 20%; /* Adjust margin-top for mobile */
+    font-size: 30px;
+    margin-top: 20%;
   }
 
   .container {
-    grid-template-columns: 1fr; /* Single column layout on mobile */
-    gap: 5%; /* Reduce gap for mobile */
-    margin: 5%; /* Adjust margin for mobile */
+    grid-template-columns: 1fr;
+    gap: 5%;
+    margin: 5%;
   }
 
   .vertical-banner {
@@ -46,17 +52,15 @@
   }
 
   .calculator-container {
-    width: 100%; /* Take full width on mobile */
-    font-size: 20px; /* Adjust font size for mobile */
+    width: 100%;
+    font-size: 20px;
   }
-
-  /* Add other adjustments for mobile as needed */
 }
 
 /* Tablet Styles */
 @media (min-width: 769px) and (max-width: 1024px) {
   body {
-    font-size: 16px; /* Adjust font size for tablet */
+    font-size: 16px;
   }
 
   .vertical-banner {
@@ -71,7 +75,7 @@
 /* Desktop Styles */
 @media (min-width: 1025px) {
   body {
-    font-size: 18px; /* Adjust font size for desktop */
+    font-size: 18px;
   }
 }
 
@@ -178,13 +182,18 @@ figcaption {
   flex-direction: column;
   align-items: center;
   background-color: #142d4c;
-  box-shadow: 0px 5px 10px 0px #051324;
   padding: 20px;
-  border-radius: 10px;
   width: 400px;
   margin: 0 auto;
   font-family: 'Digital7';
   font-size: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.2);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  max-width: 15em;
+  overflow: hidden;
 }
 
 .display {
@@ -279,6 +288,7 @@ button {
   cursor: pointer;
 }
 .func-button {
+<<<<<<< Updated upstream
   background-color: #f6aaed;
 }
 .operator-button {
@@ -298,6 +308,32 @@ button {
 .number-button {
   background-color: #8bd7f7;
 }
+=======
+  background-color: #9fd3c7;
+  color: white;
+}
+.func-button .more {
+  font-size: 50px;
+}
+.func-button[value='ac'] {
+  grid-column: span 2;
+}
+
+.equal-button {
+  background-color: #f95959;
+}
+
+.decimal-button {
+  background-color: #9fd3c7;
+  color: white;
+}
+.number-button {
+  background-color: #8bd7f7;
+}
+.number-button[value='0'] {
+  grid-column: span 2;
+}
+>>>>>>> Stashed changes
 
 button:hover {
   background-color: #ececec;
@@ -307,4 +343,24 @@ button:hover {
   margin: -3% 0 0 10%;
   font-family: 'Roboto';
   font-size: 20px;
+}
+
+.func-button,
+.operator-button,
+.number-button,
+.decimal-button,
+.equal-button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.initial-color {
+  background-color: #4aa18d;
+  color: white;
+}
+
+.clicked-operator-color {
+  background-color: #ececec;
+  color: black;
 }

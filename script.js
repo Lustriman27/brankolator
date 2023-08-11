@@ -75,7 +75,7 @@ const handleOperatorButton = (value) => {
     selectedOperator = value;
     currentInput = "";
     decimalEntered = false;
-  } else {
+  } else if (currentInput !== "") {
     firstNumber = operate(
       selectedOperator,
       firstNumber,

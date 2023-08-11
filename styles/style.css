@@ -55,13 +55,6 @@ body {
     width: 100%;
     font-size: 20px;
   }
-<<<<<<< Updated upstream
-=======
-
-
-
-  /* Add other adjustments for mobile as needed */
->>>>>>> Stashed changes
 }
 
 /* Tablet Styles */
@@ -131,7 +124,6 @@ h1 {
 
 .calculator {
   padding: 5% 10%;
-  margin: 0;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -174,6 +166,16 @@ figcaption {
   opacity: 1;
 }
 
+.banner-logo {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 0 0 12%;
+  padding: 0;
+}
+.banner-logo img {
+  width: 80%;
+  border-radius: 5px;
+}
 
 .calculator-container {
   display: flex;
@@ -200,11 +202,6 @@ figcaption {
   background-color: #ececec;
   box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
   padding: 10px 95px;
-  width: 150px;
-}
-.display h2 {
-  overflow: hidden;
-  white-space: nowrap;
 }
 
 .icons img {
@@ -315,15 +312,10 @@ button {
   background-color: #9fd3c7;
   color: white;
 }
-<<<<<<< Updated upstream
 .func-button .more {
   font-size: 50px;
 }
 .func-button[value='ac'] {
-=======
-
-/* .func-button[value="ac"] {
->>>>>>> Stashed changes
   grid-column: span 2;
 }
 
@@ -345,17 +337,6 @@ button {
 
 button:hover {
   background-color: #ececec;
-}
-
-.banner-logo {
-  display: flex;
-  justify-content: flex-start;
-  margin: 0 0 0 22%;
-  padding: 0;
-}
-.banner-logo img {
-  width: 70%;
-  border-radius: 5px;
 }
 
 .copyright {

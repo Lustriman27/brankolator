@@ -14,8 +14,7 @@ body {
 
 /* Add Media Queries for Different Screen Sizes */
 
-/* Mobile Styles */
-@media (max-width: 768px) {
+Mobile Styles @media (max-width: 768px) {
   body {
     font-size: 14px; /* Adjust font size for mobile */
   }
@@ -46,6 +45,7 @@ body {
 
   .banner-logo {
     display: none;
+    margin: 0 0 0 35%;
   }
 
   .calculator-container {
@@ -68,6 +68,7 @@ body {
 
   .banner-logo {
     display: none;
+    margin: 0 0 0 35%;
   }
 }
 
@@ -79,7 +80,7 @@ body {
 }
 
 .left-col {
-  width: 70%;
+  width: 100%;
   background: #385170;
   position: absolute;
   top: 0;
@@ -184,8 +185,8 @@ figcaption {
   margin-bottom: 20px;
   background-color: #ececec;
   box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-  padding: 10px 95px;
-  width: 150px;
+  padding: 10px 50px;
+  width: 270px;
 }
 
 .display h2 {
@@ -265,7 +266,7 @@ button:disabled {
 .banner-logo {
   display: flex;
   justify-content: flex-start;
-  margin: 0 0 0 22%;
+  margin: 0 0 0 17%;
   padding: 0;
 }
 .banner-logo img {

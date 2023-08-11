@@ -79,7 +79,7 @@ const handleOperatorButton = (value) => {
     selectedOperator = value;
     currentInput = '';
     decimalEntered = false;
-  } else {
+  } else if (currentInput !== '') {
     firstNumber = operate(
       selectedOperator,
       firstNumber,
@@ -91,6 +91,8 @@ const handleOperatorButton = (value) => {
     decimalEntered = false;
 
     updateDisplay(firstNumber);
+  } else {
+    selectedOperator = value;
   }
 };
 
@@ -125,11 +127,17 @@ equalButton.addEventListener('click', () => {
 const handleEqualButton = () => {
   playEqualSound();
 
-  if (firstNumber !== null && selectedOperator !== null) {
+  if (
+    firstNumber !== null &&
+    selectedOperator !== null &&
+    currentInput !== ''
+  ) {
     firstNumber = operate(
-      selectedOperator,
-      firstNumber,
-      parseFloat(currentInput)
+      (firstNumber = operate(
+        selectedOperator,
+        firstNumber,
+        parseFloat(currentInput)
+      ))
     );
 
     updateDisplay(firstNumber);

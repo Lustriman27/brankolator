@@ -33,6 +33,7 @@ let playEqualSound = function () {
 
 let playErrorSound = function () {
   document.getElementById("error").play();
+  document.getElementById("equal").pause();
 };
 
 const numberButtons = document.querySelectorAll(".number-button");
@@ -212,7 +213,7 @@ function operate(operator, a, b) {
     case "/":
       if (b === 0) {
         playErrorSound();
-        return "Infinity";
+        return "Error";
       }
       return a / b;
     default:

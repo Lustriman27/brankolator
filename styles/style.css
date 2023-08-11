@@ -1,5 +1,3 @@
-/** @format */
-
 * {
   margin: 0;
 }
@@ -9,83 +7,7 @@
   src: url(./font/digital-7.ttf) format("truetype");
 }
 body {
-  background-color: white;
-}
-
-/* Add Media Queries for Different Screen Sizes */
-
-Mobile Styles @media (max-width: 768px) {
-  body {
-    font-size: 14px; /* Adjust font size for mobile */
-  }
-
-  .left-col {
-    width: 100%; /* Take full width on mobile */
-    height: 100vh; /* Adjust height for mobile */
-  }
-
-  .logo {
-    margin: 2% 0 5% 2%; /* Adjust logo margin for mobile */
-  }
-
-  h1 {
-    font-size: 30px; /* Adjust font size for mobile */
-    margin-top: 20%; /* Adjust margin-top for mobile */
-  }
-
-  .container {
-    grid-template-columns: 1fr; /* Single column layout on mobile */
-    gap: 5%; /* Reduce gap for mobile */
-    margin: 5%; /* Adjust margin for mobile */
-  }
-
-  .vertical-banner {
-    display: none;
-  }
-
-  .banner-logo {
-    display: none;
-    margin: 0 0 0 35%;
-  }
-
-  .calculator-container {
-    width: 100%; /* Take full width on mobile */
-    font-size: 20px; /* Adjust font size for mobile */
-  }
-
-  /* Add other adjustments for mobile as needed */
-}
-
-/* Tablet Styles */
-@media (min-width: 769px) and (max-width: 1024px) {
-  body {
-    font-size: 16px; /* Adjust font size for tablet */
-  }
-
-  .vertical-banner {
-    display: none;
-  }
-
-  .banner-logo {
-    display: none;
-    margin: 0 0 0 35%;
-  }
-}
-
-/* Desktop Styles */
-@media (min-width: 1025px) {
-  body {
-    font-size: 18px; /* Adjust font size for desktop */
-  }
-}
-
-.left-col {
-  width: 100%;
-  background: #385170;
-  position: absolute;
-  top: 0;
-  height: 190vh;
-  z-index: -1;
+  background-color: #385170;
 }
 
 .logo {
@@ -128,8 +50,8 @@ h1 {
   box-sizing: border-box;
   display: inline-block;
   overflow: hidden;
-  margin-right: 150px;
-  margin-top: -100px;
+  margin-right: 300px;
+  margin-top: -80px;
   width: 300px;
 }
 .con-publi img {
@@ -238,9 +160,6 @@ button {
 .func-button .more {
   font-size: 50px;
 }
-/* .func-button[value="ac"] {
-  grid-column: span 2;
-} */
 
 .operator-button {
   background-color: #9fd3c7;
@@ -277,4 +196,139 @@ button:disabled {
 .copyright {
   margin: -3% 0 0 10%;
   font-family: "Roboto";
+}
+
+@media (min-width: 1025px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+
+  .con-publi {
+    position: relative;
+    margin: 4% 0% 0% -40%;
+    padding: 10%;
+    box-sizing: border-box;
+    display: inline-block;
+    overflow: hidden;
+    width: 100%;
+    transition: none;
+  }
+
+  figcaption {
+    visibility: hidden;
+    display: none;
+  }
+
+  .vertical-banner {
+    display: none;
+  }
+
+  .banner-logo {
+    margin: 4% -22% 0 35%;
+  }
+  .copyright {
+    margin: 0 0 0 40%;
+    font-family: "Roboto";
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .logo {
+    margin: 5% 0 5% 5%;
+  }
+
+  .img-croco {
+    width: 30%;
+    margin-left: 15%;
+  }
+
+  h1 {
+    font-size: 30px;
+    margin-top: 10%;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    width: 150px;
+    gap: 5%;
+    margin: 5%;
+  }
+
+  .vertical-banner {
+    display: none;
+  }
+
+  .calculator-container {
+    width: 200px;
+    font-size: 20px;
+    margin: 5% 25% 0% 13%;
+  }
+
+  button {
+    padding: 5px;
+    font-size: 14px;
+    font-family: "Digital7";
+    font-weight: bold;
+    width: 100%;
+    height: 35px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #ececec;
+    cursor: pointer;
+  }
+
+  .display {
+    text-align: right;
+    margin-bottom: 7%;
+    background-color: #ececec;
+    box-shadow: inset 0 2% 5% 0 rgba(0, 0, 0, 0.5);
+    width: 80%;
+    padding: 2% 1%;
+  }
+
+  .con-publi {
+    position: relative;
+    margin: 0% 30% 3% 20%;
+    padding: 10%;
+    box-sizing: border-box;
+    display: inline-block;
+    overflow: hidden;
+    width: 100%;
+    transition: none;
+  }
+
+  .con-publi img {
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  figcaption {
+    visibility: hidden;
+    display: none;
+  }
+
+  .banner-logo {
+    margin-top: -7%;
+    margin-bottom: 1%;
+  }
+
+  .banner-logo img {
+    display: block;
+    width: 100%;
+    margin: 0 0 0 14%;
+  }
+  .copyright {
+    margin: 0 10% 0 33.5%;
+    font-family: "Roboto";
+  }
 }

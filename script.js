@@ -171,6 +171,22 @@ const handleBackspaceButton = () => {
   }
 };
 
+// negative button
+const negativeButton = document.querySelector(".func-button[value='negative']");
+
+negativeButton.addEventListener("click", () => {
+  handleNegativeButton();
+});
+
+const handleNegativeButton = () => {
+  playButtonSound();
+
+  if (currentInput !== "") {
+    currentInput = (parseFloat(currentInput) * -1).toString();
+    updateDisplay(currentInput);
+  }
+};
+
 // keyboard support
 document.addEventListener("keydown", (event) => {
   if (/[0-9]/.test(event.key)) {

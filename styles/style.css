@@ -243,9 +243,9 @@ button {
 .func-button .more {
   font-size: 50px;
 }
-.func-button[value="ac"] {
+/* .func-button[value="ac"] {
   grid-column: span 2;
-}
+} */
 
 .operator-button {
   background-color: #9fd3c7;

@@ -165,16 +165,6 @@ figcaption {
   opacity: 1;
 }
 
-.banner-logo {
-  display: flex;
-  justify-content: flex-start;
-  margin: 0 0 0 12%;
-  padding: 0;
-}
-.banner-logo img {
-  width: 80%;
-  border-radius: 5px;
-}
 
 .calculator-container {
   display: flex;
@@ -191,12 +181,17 @@ figcaption {
 }
 
 .display {
-  display: block;
   text-align: right;
   margin-bottom: 20px;
   background-color: #ececec;
   box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
   padding: 10px 95px;
+  width: 150px;
+}
+
+.display h2 {
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .icons img {
@@ -268,8 +263,18 @@ button:disabled {
   background-color: #ececec;
 }
 
+.banner-logo {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 0 0 22%;
+  padding: 0;
+}
+.banner-logo img {
+  width: 80%;
+  border-radius: 5px;
+}
+
 .copyright {
   margin: -3% 0 0 10%;
   font-family: "Roboto";
-  font-size: 20px;
 }
